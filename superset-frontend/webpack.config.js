@@ -355,9 +355,16 @@ const config = {
         include: /node_modules\/react-dom/,
         use: ['react-hot-loader/webpack'],
       },
+      // {
+      //   test: /\.css$/, // Target CSS files
+      //   use: [
+      //     'style-loader', // Injects CSS into the DOM
+      //     'css-loader',   // Interprets @import and url() in CSS files
+      //   ],
+      // },
       {
         test: /\.css$/,
-        include: [APP_DIR, /superset-ui.+\/src/],
+        // include: [APP_DIR, /superset-ui.+\/src/],
         use: [
           isDevMode ? 'style-loader' : MiniCssExtractPlugin.loader,
           {
